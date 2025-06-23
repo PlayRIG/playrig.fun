@@ -1,0 +1,41 @@
+---
+import {Image} from "astro:assets";
+---
+
+<div class="fixed left-0 top-0 z-[1] flex h-12 w-full items-center justify-between px-4">
+  <div class="flex items-center space-x-1.5">
+    <Image
+      src="/images/playrig.png"
+      alt="Descriptive alt text"
+      width={25}
+      height={25}
+      format="webp"
+      fit="contain"
+    />
+    <p class="font-polysans mt-1 text-2xl font-semibold">Playrig</p>
+  </div>
+
+  <div class="flex items-center space-x-10">
+    <a
+      href="/"
+      class="text-[12px] text-sm font-normal text-black/60 transition-all hover:text-[#FF2C2C]"
+      >WHO WE ARE</a
+    >
+    <a
+      href="/"
+      class="text-[12px] text-sm font-normal text-black/60 transition-all hover:text-[#FF2C2C]"
+      >CONTACT US</a
+    >
+    <a
+      href="/"
+      class="text-[12px] text-sm font-normal text-black/60 transition-all hover:text-[#FF2C2C]"
+      >PORTFOLIO</a
+    >
+  </div>
+  <div class="flex items-center space-x-4">
+    <button
+      class="rounded-sm bg-black px-6 py-2 text-[12px] font-extralight text-white transition-all hover:bg-[#FF2C2C]">
+      TRY NOW
+    </button>
+  </div>
+</div>

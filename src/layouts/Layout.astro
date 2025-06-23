@@ -1,0 +1,52 @@
+---
+import {Navbar} from "@components/layout";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="Playrig.fun" />
+    <title>Playrig.fun</title>
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+  </body>
+</html>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
+
+  @font-face {
+    font-family: "Polysans";
+    src: url("/fonts/polysans-300.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Polysans Italic";
+    src: url("/fonts/polysans-300-italic.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  html,
+  body {
+    font-family: "Inter Tight", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    background: #efefef;
+    height: 100%;
+    scroll-behavior: smooth;
+    overflow: hidden;
+  }
+</style>
