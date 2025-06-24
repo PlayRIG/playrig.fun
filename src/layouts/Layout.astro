@@ -11,7 +11,34 @@ import {Navbar} from "@components/layout";
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content="Playrig.fun" />
     <title>Playrig.fun</title>
+
+    <!-- 🔗 Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- 🧠 Google Fonts (Inter Tight) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 🚀 Preload Polysans Fonts -->
+    <link
+      rel="preload"
+      href="/fonts/polysans-300.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/polysans-300-italic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
   </head>
+
   <body>
     <Navbar />
     <slot />
@@ -44,8 +71,8 @@ import {Navbar} from "@components/layout";
     margin: 0;
     box-sizing: border-box;
     width: 100%;
-    background: #efefef;
     height: 100%;
+    background: #efefef;
     scroll-behavior: smooth;
     overflow: hidden;
   }
