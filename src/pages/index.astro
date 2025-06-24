@@ -1,7 +1,7 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import {ArrowUpRight, ArrowDownRight} from "lucide-react";
-import {Container} from "@components/ui";
+import {Container, TextScramble} from "@components/ui";
 ---
 
 <Layout>
@@ -11,11 +11,12 @@ import {Container} from "@components/ui";
         class="mx-auto max-w-[65rem] text-center font-polysans text-[4.5rem] tracking-[-0.32rem]">
         Building and shaping
       </h1>
+
       <h2
         class="mx-auto -mt-7 max-w-[65rem] text-center font-polysans text-[4.5rem] tracking-[-0.32rem]">
-        <span class="font-polysans-italic">Ideas</span> through <span
-          class="font-polysans-italic text-[#FF2C2C]">AI</span
-        > and <span class="font-polysans-italic text-[#FF2C2C]">WEB3</span>
+        <span class="font-polysans-italic">Ideas</span> through
+        <span class="font-polysans-italic text-[#FF2C2C]">AI</span> and
+        <span class="font-polysans-italic text-[#FF2C2C]">WEB3</span>
       </h2>
 
       <div class="mx-auto mt-3 max-w-[35rem] text-center">
@@ -43,6 +44,7 @@ import {Container} from "@components/ui";
             />
           </div>
         </button>
+
         <button
           id="consult-button"
           class="group flex items-center space-x-2 rounded-full border border-black bg-transparent px-10 py-3 transition-all ease-in hover:border-transparent hover:bg-gray-400">
@@ -65,7 +67,28 @@ import {Container} from "@components/ui";
       </div>
     </Container>
   </section>
-  <section id="portfolio" class="relative h-screen bg-[#111111]"></section>
+
+  <section
+    id="portfolio"
+    class="relative flex h-screen items-center justify-center bg-[#111111]">
+    <div class="relative">
+      <TextScramble
+        text="Portfolio"
+        client:visible
+        className="mx-auto font-polysans-italic text-[7.5rem] tracking-[-0.32rem] text-white"
+      />
+
+      <p class="font-inconsolata absolute -right-7 top-5 text-xl text-white">02</p>
+
+      <div class="flex items-center justify-center">
+        <button
+          style="text-decoration-thickness: 0.5px"
+          class="font-inconsolata text-xl font-extralight text-white/80 underline hover:text-[#f2665f]">
+          SEE ALL PORTFOLIO
+        </button>
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <script>
@@ -79,9 +102,7 @@ import {Container} from "@components/ui";
       (event) => {
         event.preventDefault();
         if (isScrolling) return;
-
         isScrolling = true;
-
         const direction = event.deltaY > 0 ? 1 : -1;
         const nextSectionIndex = currentSectionIndex + direction;
 
@@ -91,44 +112,44 @@ import {Container} from "@components/ui";
           nextSection.scrollIntoView({behavior: "smooth"});
         }
 
-        setTimeout(() => (isScrolling = false), 900);
+        setTimeout(() => {
+          isScrolling = false;
+        }, 900);
       },
       {passive: false},
     );
   });
-</script>
 
-<script>
-  const consultButton = document.getElementById("consult-button") as HTMLButtonElement;
+  const consultButton = document.getElementById("consult-button");
   const consultArrowUp = document.getElementById("consult-arrow-up") as HTMLElement;
   const consultArrowDown = document.getElementById("consult-arrow-down") as HTMLElement;
 
-  const productButton = document.getElementById("product-button") as HTMLButtonElement;
+  const productButton = document.getElementById("product-button");
   const productArrowUp = document.getElementById("product-arrow-up") as HTMLElement;
   const productArrowDown = document.getElementById("product-arrow-down") as HTMLElement;
 
-  productButton.addEventListener("mouseenter", () => {
+  productButton?.addEventListener("mouseenter", () => {
     productArrowUp.style.opacity = "0";
     productArrowUp.style.transform = "rotate(45deg) scale(0.8)";
     productArrowDown.style.opacity = "1";
     productArrowDown.style.transform = "rotate(0deg) scale(1)";
   });
 
-  productButton.addEventListener("mouseleave", () => {
+  productButton?.addEventListener("mouseleave", () => {
     productArrowUp.style.opacity = "1";
     productArrowUp.style.transform = "rotate(0deg) scale(1)";
     productArrowDown.style.opacity = "0";
     productArrowDown.style.transform = "rotate(-45deg) scale(0.8)";
   });
 
-  consultButton.addEventListener("mouseenter", () => {
+  consultButton?.addEventListener("mouseenter", () => {
     consultArrowUp.style.opacity = "0";
     consultArrowUp.style.transform = "rotate(45deg) scale(0.8)";
     consultArrowDown.style.opacity = "1";
     consultArrowDown.style.transform = "rotate(0deg) scale(1)";
   });
 
-  consultButton.addEventListener("mouseleave", () => {
+  consultButton?.addEventListener("mouseleave", () => {
     consultArrowUp.style.opacity = "1";
     consultArrowUp.style.transform = "rotate(0deg) scale(1)";
     consultArrowDown.style.opacity = "0";

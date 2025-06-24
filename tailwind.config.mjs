@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         polysans: ["Polysans", "sans-serif"],
         "polysans-italic": ["Polysans Italic", "sans-serif"],
+        inconsolata: ["Inconsolata", "monospace"],
       },
     },
   },
