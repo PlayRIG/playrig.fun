@@ -46,6 +46,7 @@ export default defineConfig({
         "@components": "/src/components",
         "@assets": "/src/assets",
         "@layouts": "/src/layouts",
+        "@stores": "/src/stores",
       },
     },
   },

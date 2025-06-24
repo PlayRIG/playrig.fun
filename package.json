@@ -17,6 +17,7 @@
     "@astrojs/node": "^9.2.2",
     "@astrojs/react": "latest",
     "@astrojs/tailwind": "latest",
+    "@preact/signals": "^2.2.0",
     "@vercel/analytics": "^1.4.1",
     "astro": "latest",
     "clsx": "^2.1.1",
