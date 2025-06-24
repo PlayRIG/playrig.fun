@@ -1,5 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import {ArrowUpRight, ArrowDownRight} from "lucide-react";
 import {Container} from "@components/ui";
 ---
 
@@ -16,6 +17,78 @@ import {Container} from "@components/ui";
           class="font-polysans-italic text-[#FF2C2C]">AI</span
         > and <span class="font-polysans-italic text-[#FF2C2C]">WEB3</span>
       </h2>
+
+      <div class="mx-auto mt-3 max-w-[35rem] text-center">
+        <p class="text-base font-normal text-black/60">
+          Empowering innovation by combining the intelligence of AI and WEB3, turn ideas
+          into impactful digital experiences.
+        </p>
+      </div>
+
+      <div class="mt-8 flex items-center justify-center space-x-4">
+        <button
+          id="product-button"
+          class="flex items-center space-x-2 rounded-full bg-black px-10 py-3 transition-all hover:bg-[#FF2C2C]">
+          <p class="text-sm font-normal text-white">TRY OUR PRODUCT</p>
+          <ArrowUpRight id="product-arrow-up" size={20} className="text-white" />
+          <ArrowDownRight
+            id="product-arrow-down"
+            size={20}
+            className="hidden text-white"
+          />
+        </button>
+        <button
+          id="consult-button"
+          class="group flex items-center space-x-2 rounded-full border border-black bg-transparent px-10 py-3 transition-all hover:border-transparent hover:bg-gray-400">
+          <p class="text-sm font-normal text-black group-hover:text-white">
+            CONSULT WITH US
+          </p>
+          <ArrowUpRight
+            id="consult-arrow-up"
+            size={20}
+            className="text-black group-hover:text-white"
+          />
+          <ArrowDownRight
+            id="consult-arrow-down"
+            size={20}
+            className="hidden text-black group-hover:text-white"
+          />
+        </button>
+      </div>
     </Container>
   </section>
 </Layout>
+
+<script>
+  const consultButton = document.getElementById("consult-button") as HTMLButtonElement;
+  const consultArrowUp = document.getElementById("consult-arrow-up") as HTMLDivElement;
+  const consultArrowDown = document.getElementById(
+    "consult-arrow-down",
+  ) as HTMLDivElement;
+
+  const productButton = document.getElementById("product-button") as HTMLButtonElement;
+  const productArrowUp = document.getElementById("product-arrow-up") as HTMLDivElement;
+  const productArrowDown = document.getElementById(
+    "product-arrow-down",
+  ) as HTMLDivElement;
+
+  productButton.addEventListener("mouseenter", () => {
+    productArrowUp.classList.add("hidden");
+    productArrowDown.classList.remove("hidden");
+  });
+
+  productButton.addEventListener("mouseleave", () => {
+    productArrowUp.classList.remove("hidden");
+    productArrowDown.classList.add("hidden");
+  });
+
+  consultButton.addEventListener("mouseenter", () => {
+    consultArrowUp.classList.add("hidden");
+    consultArrowDown.classList.remove("hidden");
+  });
+
+  consultButton.addEventListener("mouseleave", () => {
+    consultArrowUp.classList.remove("hidden");
+    consultArrowDown.classList.add("hidden");
+  });
+</script>
