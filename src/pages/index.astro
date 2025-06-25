@@ -7,17 +7,21 @@ import {Container, TextScramble} from "@components/ui";
 <Layout>
   <section class="h-screen" id="hero">
     <Container>
-      <h1
-        class="mx-auto max-w-[65rem] text-center font-polysans text-[4.5rem] tracking-[-0.32rem]">
-        Building and shaping
-      </h1>
+      <div class="overflow-hidden">
+        <div class="reveal-text">
+          <h1
+            class="mx-auto max-w-[65rem] text-center font-polysans text-[4.5rem] tracking-[-0.32rem]">
+            Building and shaping
+          </h1>
 
-      <h2
-        class="mx-auto -mt-7 max-w-[65rem] text-center font-polysans text-[4.5rem] tracking-[-0.32rem]">
-        <span class="font-polysans-italic">Ideas</span> through
-        <span class="font-polysans-italic text-[#FF2C2C]">AI</span> and
-        <span class="font-polysans-italic text-[#FF2C2C]">WEB3</span>
-      </h2>
+          <h2
+            class="mx-auto -mt-7 max-w-[65rem] text-center font-polysans text-[4.5rem] tracking-[-0.32rem]">
+            <span class="font-polysans-italic">Ideas</span> through
+            <span class="font-polysans-italic text-[#FF2C2C]">AI</span> and
+            <span class="font-polysans-italic text-[#FF2C2C]">WEB3</span>
+          </h2>
+        </div>
+      </div>
 
       <div class="mx-auto mt-3 max-w-[35rem] text-center">
         <p class="text-base font-normal text-black/60">
@@ -92,6 +96,20 @@ import {Container, TextScramble} from "@components/ui";
 </Layout>
 
 <script>
+  import {gsap} from "gsap";
+  import {SplitText} from "gsap/SplitText";
+
+  gsap.registerPlugin(SplitText);
+  let splitText = new SplitText(".reveal-text", {type: "chars"});
+  let chars = splitText.chars;
+
+  gsap.from(chars, {
+    yPercent: 100,
+    stagger: 0.02,
+    ease: "back.out",
+    duration: 0.7,
+  });
+
   document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section");
     let currentSectionIndex = 0;
