@@ -5,7 +5,7 @@ import {Container, TextScramble} from "@components/ui";
 ---
 
 <Layout>
-  <section class="h-screen" id="hero">
+  <section id="hero">
     <Container>
       <div class="overflow-hidden">
         <div class="reveal-text">
@@ -72,26 +72,26 @@ import {Container, TextScramble} from "@components/ui";
     </Container>
   </section>
 
-  <section
-    id="portfolio"
-    class="relative flex h-screen items-center justify-center bg-[#111111]">
-    <div class="relative">
-      <TextScramble
-        text="Portfolio"
-        client:visible
-        className="mx-auto font-polysans-italic text-[7.5rem] tracking-[-0.32rem] text-white"
-      />
+  <section id="portfolio">
+    <Container className="bg-[#111111]">
+      <div class="relative">
+        <TextScramble
+          text="Portfolio"
+          client:visible
+          className="mx-auto font-polysans-italic text-[7.5rem] tracking-[-0.32rem] text-white"
+        />
 
-      <p class="font-inconsolata absolute -right-7 top-5 text-xl text-white">02</p>
+        <p class="absolute -right-7 top-5 font-inconsolata text-xl text-white">02</p>
 
-      <div class="flex items-center justify-center">
-        <button
-          style="text-decoration-thickness: 0.5px"
-          class="font-inconsolata text-xl font-extralight text-white/80 underline hover:text-[#f2665f]">
-          SEE ALL PORTFOLIO
-        </button>
+        <div class="flex items-center justify-center">
+          <button
+            style="text-decoration-thickness: 0.5px"
+            class="font-inconsolata text-xl font-extralight text-white/80 underline hover:text-[#f2665f]">
+            SEE ALL PORTFOLIO
+          </button>
+        </div>
       </div>
-    </div>
+    </Container>
   </section>
 </Layout>
 
@@ -138,36 +138,36 @@ import {Container, TextScramble} from "@components/ui";
     );
   });
 
-  const consultButton = document.getElementById("consult-button");
+  const consultButton = document.getElementById("consult-button") as HTMLButtonElement;
   const consultArrowUp = document.getElementById("consult-arrow-up") as HTMLElement;
   const consultArrowDown = document.getElementById("consult-arrow-down") as HTMLElement;
 
-  const productButton = document.getElementById("product-button");
+  const productButton = document.getElementById("product-button") as HTMLButtonElement;
   const productArrowUp = document.getElementById("product-arrow-up") as HTMLElement;
   const productArrowDown = document.getElementById("product-arrow-down") as HTMLElement;
 
-  productButton?.addEventListener("mouseenter", () => {
+  productButton.addEventListener("mouseenter", () => {
     productArrowUp.style.opacity = "0";
     productArrowUp.style.transform = "rotate(45deg) scale(0.8)";
     productArrowDown.style.opacity = "1";
     productArrowDown.style.transform = "rotate(0deg) scale(1)";
   });
 
-  productButton?.addEventListener("mouseleave", () => {
+  productButton.addEventListener("mouseleave", () => {
     productArrowUp.style.opacity = "1";
     productArrowUp.style.transform = "rotate(0deg) scale(1)";
     productArrowDown.style.opacity = "0";
     productArrowDown.style.transform = "rotate(-45deg) scale(0.8)";
   });
 
-  consultButton?.addEventListener("mouseenter", () => {
+  consultButton.addEventListener("mouseenter", () => {
     consultArrowUp.style.opacity = "0";
     consultArrowUp.style.transform = "rotate(45deg) scale(0.8)";
     consultArrowDown.style.opacity = "1";
     consultArrowDown.style.transform = "rotate(0deg) scale(1)";
   });
 
-  consultButton?.addEventListener("mouseleave", () => {
+  consultButton.addEventListener("mouseleave", () => {
     consultArrowUp.style.opacity = "1";
     consultArrowUp.style.transform = "rotate(0deg) scale(1)";
     consultArrowDown.style.opacity = "0";
