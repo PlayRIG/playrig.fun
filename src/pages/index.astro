@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import {ArrowUpRight, ArrowDownRight} from "lucide-react";
 import {Container, TextScramble} from "@components/ui";
+import {Portfolio} from "@components/pages";
 ---
 
 <Layout>
@@ -73,25 +74,7 @@ import {Container, TextScramble} from "@components/ui";
   </section>
 
   <section id="portfolio">
-    <Container className="bg-[#111111]">
-      <div class="relative">
-        <TextScramble
-          text="Portfolio"
-          client:visible
-          className="mx-auto font-polysans-italic text-[7.5rem] tracking-[-0.32rem] text-white"
-        />
-
-        <p class="absolute -right-7 top-5 font-inconsolata text-xl text-white">02</p>
-
-        <div class="flex items-center justify-center">
-          <button
-            style="text-decoration-thickness: 0.5px"
-            class="font-inconsolata text-xl font-extralight text-white/80 underline hover:text-[#f2665f]">
-            SEE ALL PORTFOLIO
-          </button>
-        </div>
-      </div>
-    </Container>
+    <Portfolio client:visible />
   </section>
 </Layout>
 
@@ -107,7 +90,7 @@ import {Container, TextScramble} from "@components/ui";
     yPercent: 100,
     stagger: 0.02,
     ease: "back.out",
-    duration: 0.7,
+    duration: 0.8,
   });
 
   document.addEventListener("DOMContentLoaded", () => {

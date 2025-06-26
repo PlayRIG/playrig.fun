@@ -33,7 +33,6 @@ export const TextScramble: React.FC<TextScrambleProps> = ({
 
   const startScramble = (): void => {
     if (isAnimating) return;
-
     setIsAnimating(true);
 
     const scrambleStart = Date.now();
