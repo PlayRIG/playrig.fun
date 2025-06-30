@@ -5,16 +5,13 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "railway:build": "bun install --no-frozen-lockfile && astro check && astro build",
-    "start": "astro preview --host 0.0.0.0 --port $PORT",
-    "build": "astro build",
+    "bundle": "astro check && astro build",
     "preview": "astro preview",
-    "format": "prettier --write .",
-    "check": "astro check"
+    "astro": "astro",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@astrojs/check": "latest",
-    "@astrojs/node": "^9.2.2",
     "@astrojs/react": "latest",
     "@astrojs/tailwind": "latest",
     "@preact/signals": "^2.2.0",

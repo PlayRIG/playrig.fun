@@ -1,8 +1,0 @@
-{
-  "build": {
-    "command": "bun run railway:build"
-  },
-  "start": {
-    "command": "bun run start"
-  }
-}
